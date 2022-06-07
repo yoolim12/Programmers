@@ -16,3 +16,11 @@ order by cart_id
 -- WHERE A.CART_ID = B.CART_ID
 -- AND A.NAME = 'Milk' AND B.NAME = 'Yogurt'
 -- ORDER BY A.CART_ID
+
+-- SELECT 
+--   CART_ID 
+-- FROM 
+--   CART_PRODUCTS
+-- WHERE NAME IN ("Milk", "Yogurt") 
+-- GROUP BY CART_ID HAVING COUNT(DISTINCT(NAME)) >= 2
+-- ORDER BY CART_ID
