@@ -1,4 +1,6 @@
 # 카펫
+# 파이썬 약수 구하기
+# https://minnit-develop.tistory.com/16
 def solution(brown, yellow):
     answer = []
     totalS = brown + yellow
