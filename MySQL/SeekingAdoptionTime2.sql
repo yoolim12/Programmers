@@ -34,3 +34,20 @@ group by hourlist.hour
 -- 를 돌려보면 알 듯이 hour 컬럼은 0~23까지 쭉 나오고 datetime 컬럼은 null 상태로 있음
 -- 따라서 group by hourlist.hour로 해서 count(hourlist.hour)로 하게 되면 hour가 0일 때
 -- hour = 0인 컬럼 1개 해서 count가 원하는 값 0 이 아닌 1로 나오게 됨
+
+-- 또 다른 나의 풀이
+-- 코드를 입력하세요
+-- with recursive timestamp as (
+--     select 0 as hour
+--     union all
+--     select hour+1
+--     from timestamp
+--     where hour < 23
+-- )
+
+-- select t.hour, if(hour(o.datetime) is not null, count(hour(o.datetime)), 0)
+-- from timestamp as t
+-- left join animal_outs as o
+-- on t.hour = hour(o.datetime)
+-- group by t.hour
+-- order by t.hour
